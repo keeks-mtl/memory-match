@@ -20,8 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
     "fas fa-qrcode",
   ];
 
-  cardDeck.sort(() => 0.5 - Math.random());
-
   const grid = document.querySelector(".grid");
   const resultDisplay = document.querySelector("#result");
   const resetButton = document.querySelector("#reset");
@@ -34,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // create your board
   function createBoard() {
+    cardDeck.sort(() => Math.random() - 0.5);
     for (let i = 0; i < cardDeck.length; i++) {
       var card = document.createElement("span");
       card.setAttribute("class", "box");
@@ -74,6 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
     cardsChosenId.push(cardId);
     this.setAttribute("class", cardDeck[cardId]);
     console.log(cardsChosen[0]);
+    moveCounter();
     if (cardsChosen.length === 2) {
       console.log(cardsChosen[1]);
       setTimeout(checkForMatch, 500);
@@ -86,10 +86,16 @@ document.addEventListener("DOMContentLoaded", () => {
     cardsWon = [];
     cardsChosenId = [];
     cardsChosen = [];
+    moves = 0;
     resultDisplay.textContent = 0;
+    counter.textContent = moves;
   });
 
   //move counter
+  function moveCounter() {
+    moves = moves + 1;
+    counter.textContent = moves;
+  }
 
   createBoard();
 });

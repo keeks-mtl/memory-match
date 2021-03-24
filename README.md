@@ -56,8 +56,7 @@ An important aspect of the planning for this project was the element of User-Exp
   - The base of the code for the overall structure of the site.
 - CSS3
   - For the styling of the site
-- Javascript
-  -
+- ## Javascript
 
 ### Libraries, Frameworks & Tools
 
@@ -109,11 +108,15 @@ An important aspect of the planning for this project was the element of User-Exp
 
 ## Bugs
 
-### Bug name
+### Bug Cards Not Shuffling after reset
 
 #### Bug
 
+- The cards weren't randomising after the reset button was pushed
+
 #### Fix
+
+- Found that I had put the sorting of the cards outside of the create board function
 
 ## Deployment
 
@@ -144,6 +147,9 @@ You can clone the repository to your local device following these steps:
 ### Version Control
 
 ## Credits
+
+- [Javascript.info](https://javascript.info/task/shuffle)
+  - radomising the array for different cards
 
 ### Content - Media -Inspiration
 
