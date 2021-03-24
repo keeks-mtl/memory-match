@@ -80,6 +80,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
   //reset button
+  resetButton.addEventListener("click", function () {
+    grid.innerHTML = "";
+    createBoard();
+    cardsWon = [];
+    cardsChosenId = [];
+    cardsChosen = [];
+    resultDisplay.textContent = 0;
+  });
+
   //move counter
 
   createBoard();
