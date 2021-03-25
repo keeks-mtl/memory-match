@@ -3,16 +3,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const cardDeck = [
     "fas fa-arrows-alt",
-    "fas fa-braille",
-    "fas fa-bacon",
+    "fas fa-border-none",
+    "fas fa-asterisk",
     "fas fa-check-double",
     "fas fa-indent",
     "fas fa-compress-arrows-alt",
     "fas fa-crop-alt",
     "fas fa-qrcode",
     "fas fa-arrows-alt",
-    "fas fa-braille",
-    "fas fa-bacon",
+    "fas fa-border-none",
+    "fas fa-asterisk",
     "fas fa-check-double",
     "fas fa-indent",
     "fas fa-compress-arrows-alt",
@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
   var cardsChosen = [];
   var cardsChosenId = [];
   var cardsWon = [];
-  notPlayable = [];
 
   // create your board
   function createBoard() {
@@ -47,17 +46,14 @@ document.addEventListener("DOMContentLoaded", () => {
     var cards = document.querySelectorAll("span");
     const optionOneId = cardsChosenId[0];
     const optionTwoId = cardsChosenId[1];
-    console.log(cardsChosenId[0]);
-    console.log(cardsChosenId[1]);
     if (cardsChosen[0] === cardsChosen[1]) {
       cards[optionOneId].setAttribute("class", "hidden-box");
       cards[optionTwoId].setAttribute("class", "hidden-box");
-      cardsWon.push(optionOneId);
-      cardsWon.push(optionTwoId);
+      cardsWon.push(optionOneId, optionTwoId);
+      alert("You found, a match!");
     } else {
       cards[optionOneId].setAttribute("class", "empty-box");
       cards[optionTwoId].setAttribute("class", "empty-box");
-      alert("Sorry, Try Again");
     }
     cardsChosen = [];
     cardsChosenId = [];
@@ -66,19 +62,28 @@ document.addEventListener("DOMContentLoaded", () => {
       resultDisplay.textContent = "Congratulations! You've won!";
     }
   }
+
   //flip your card
   function flipCard() {
-    var cardId = this.getAttribute("data-id");
-    cardsChosen.push(cardDeck[cardId]);
-    cardsChosenId.push(cardId);
-    this.setAttribute("class", cardDeck[cardId]);
-    console.log(cardsChosen[0]);
-    moveCounter();
-    if (cardsChosen.length === 2) {
-      console.log(cardsChosen[1]);
-      setTimeout(checkForMatch, 500);
+    var flip = this.getAttribute("class");
+    if (flip !== "hidden-box") {
+      var cardId = this.getAttribute("data-id");
+      cardsChosenId.push(cardId);
+      if (cardsChosenId[0] !== cardsChosenId[1]) {
+        cardsChosen.push(cardDeck[cardId]);
+        this.setAttribute("class", cardDeck[cardId]);
+        console.log(cardsChosen[0]);
+        moveCounter();
+        if (cardsChosen.length === 2) {
+          console.log(cardsChosen[1]);
+          setTimeout(checkForMatch, 500);
+        }
+      } else {
+        setTimeout(cardsChosenId.pop(), 500);
+      }
     }
   }
+
   //reset button
   resetButton.addEventListener("click", function () {
     grid.innerHTML = "";

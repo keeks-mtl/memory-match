@@ -118,6 +118,26 @@ An important aspect of the planning for this project was the element of User-Exp
 
 - Found that I had put the sorting of the cards outside of the create board function
 
+### Can match same square
+
+#### Bug
+
+- If you click twice on the same square you get a match.
+
+#### Fix
+
+- added an if statement so can't click on same square twice
+
+### Match matched cards
+
+#### Bug
+
+- If you click twice on a pair of cards you've already matched then you can match them again.
+
+#### Fix
+
+- added a non-playable array.
+
 ## Deployment
 
 This project has been deployed using GitHub pages and I have used the following process to do so:
