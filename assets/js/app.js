@@ -1,3 +1,4 @@
+// waiting for the content to be loaded
 document.addEventListener("DOMContentLoaded", () => {
   alert("connected");
 
