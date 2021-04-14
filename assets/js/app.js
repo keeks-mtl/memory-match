@@ -114,7 +114,9 @@ document.addEventListener("DOMContentLoaded", () => {
   //   counter.textContent = moves;
   // });
 
-  //congratulations popup
+  /* congratulations popup 
+    shows modal and adds the moves & time to popup
+  */
   function congratulations() {
     modal.classList.add("show");
     totalFlips.textContent = moves;
@@ -175,6 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1000);
   }
 
+  // closes modal
   function closeModal() {
     closeIcon.addEventListener("click", function (e) {
       modal.classList.remove("show");
