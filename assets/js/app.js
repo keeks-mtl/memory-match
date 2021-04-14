@@ -23,9 +23,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const grid = document.querySelector(".grid");
   const resultDisplay = document.querySelector("#result");
-  const resetButton = document.querySelector("#reset");
+  // const resetButton = document.querySelector("#reset");
   const counter = document.querySelector("#moves");
+  const totalFlips = document.querySelector("#final-moves");
   const timer = document.querySelector(".timer");
+  const resetBtn = document.querySelectorAll(".play-again");
+  const modal = document.getElementById("winpopup");
+  const closeIcon = document.querySelector(".close");
   var moves = 0;
   var cardsChosen = [];
   var cardsChosenId = [];
@@ -60,8 +64,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (cardsChosen[0] === cardsChosen[1]) {
       cards[optionOneId].setAttribute("class", "hidden-box col-2");
       cards[optionTwoId].setAttribute("class", "hidden-box col-2");
-      cardsWon.push(optionOneId, optionTwoId);
-      alert("You found, a match!");
+      cardsWon.push(optionOneId);
+      cardsWon.push(optionTwoId);
     } else {
       cards[optionOneId].setAttribute("class", "empty-box col-2");
       cards[optionTwoId].setAttribute("class", "empty-box col-2");
@@ -70,8 +74,9 @@ document.addEventListener("DOMContentLoaded", () => {
     cardsChosenId = [];
     resultDisplay.textContent = cardsWon.length / 2;
     if (cardsWon.length === cardDeck.length) {
-      resultDisplay.textContent = "Congratulations! You've won!";
-      clearInterval(interval);
+      // resultDisplay.textContent = "Congratulations! You've won!";
+      // clearInterval(interval);
+      congratulations();
     }
   }
 
@@ -97,7 +102,32 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   //reset button
-  resetButton.addEventListener("click", function () {
+  for (var i = 0; i < resetBtn.length; i++) {
+    resetBtn[i].addEventListener("click", resetGame);
+  }
+  // resetButton.addEventListener("click", function () {
+  //   grid.innerHTML = "";
+  //   createBoard();
+  //   cardsWon = [];
+  //   cardsChosenId = [];
+  //   cardsChosen = [];
+  //   moves = 0;
+  //   resultDisplay.textContent = 0;
+  //   counter.textContent = moves;
+  // });
+
+  //congratulations popup
+  function congratulations() {
+    modal.classList.add("show");
+    totalFlips.textContent = moves;
+    clearInterval(interval);
+    finalTime = timer.innerHTML;
+    document.getElementById("totalTime").innerHTML = finalTime;
+    closeModal();
+  }
+  // Reset Game
+  function resetGame() {
+    modal.classList.remove("show");
     grid.innerHTML = "";
     createBoard();
     cardsWon = [];
@@ -106,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
     moves = 0;
     resultDisplay.textContent = 0;
     counter.textContent = moves;
-  });
+  }
 
   //move counter
   function moveCounter() {
@@ -133,6 +163,12 @@ document.addEventListener("DOMContentLoaded", () => {
         minute = 0;
       }
     }, 1000);
+  }
+
+  function closeModal() {
+    closeIcon.addEventListener("click", function (e) {
+      modal.classList.remove("show");
+    });
   }
 
   createBoard();

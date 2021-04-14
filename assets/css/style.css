@@ -23,27 +23,22 @@ h4 {
 
 #game-box {
   padding-top: 2%;
-  background-color: #d3e9ee;
   padding-bottom: 50%;
+  background-color: #d3e9ee;
 }
 
-/* .row {
-  text-align: center;
-} */
-
-/* .grid {
+/*.grid {
   display: flex;
   flex-wrap: wrap;
-  height: 420px;
-  width: 420px;
   margin: auto;
-} */
+}*/
 
-#reset {
+.play-again {
   background-color: #4d8076;
   border-radius: 45%;
   border-color: #4d8076;
 }
+
 .btn-light {
   background-color: white;
   border-radius: 45%;
@@ -53,46 +48,115 @@ h4 {
   border-radius: 10px;
 }
 
+.col-2 {
+  margin: 2%;
+  border-radius: 10px;
+}
+
 .box {
   display: inline-block;
-  /* width: 100px; */
+  /*  width: 100px;*/
   height: 100px;
   border: 2px solid #d3e9ee;
   background-color: #4d8076;
   cursor: pointer;
 }
+
 .hidden-box {
   background-color: #d3e9ee;
-  /* width: 100px; */
   height: 100px;
+  animation-name: found;
+  -webkit-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  animation-duration: .75s;
 }
 
 .box:hover {
   background-color: #3d665e;
-  /* add inner border */
+  animation-name: pulse;
+  -webkit-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  animation-duration: .75s;
 }
 .empty-box:hover {
   background-color: #3d665e;
-  /* add inner border */
+  animation-name: pulse;
+  -webkit-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  animation-duration: .75s;
 }
 
 .fas {
   color: #4d8076;
   font-size: 75px;
-  /* display: inline-block; */
+  /*  display: inline-block;*/
   text-align: center;
   padding-top: 2%;
   padding-left: 2%;
-  /* vertical-align: bottom; */
-  /* height: 100px;
-  width: 100px; */
+  /*  vertical-align: bottom;
+  height: 100px;*/
+  /* width: 100px;*/
+  transform: rotateY(0);
+    animation-name: flipCardover;
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    animation-duration: .75s;
 }
+
 .empty-box {
   height: 100px;
-  /* width: 100px; */
+  /*  width: 100px;*/
   /* color: grey; */
   background-color: #4d8076;
   border: 2px solid #d3e9ee;
+  animation-name: pulse;
+  -webkit-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  animation-duration: .75s;
+  animation-iteration-count: 1; */
+}
+
+/* overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.popup {
+  margin: 35% auto;
+  border-radius: 25px;
+  width: 85%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+.card-header .close {
+  transition: all 200ms;
+  font-weight: 900;
+  font-size: 3rem;
+  color: #000;
+  position: absolute;
+  top: -2%;
+  right: 1%;
+}
+.show {
+  visibility: visible !important;
+  opacity: 100 !important;
+}
+
+h3 {
+  display: inline;
+}
+p {
+  display: inline;
+}
+.card-header .play-again {
+  display: block;
 }
 
 @media only screen and (max-width: 320px) {
@@ -111,5 +175,68 @@ h4 {
   }
   .empty-box {
     height: 75px;
+  }
+}
+
+@media only screen and (min-width: 436px) {
+  .popup {
+    margin: 75px auto;
+  }
+}
+
+/* animations */
+@keyframes flipCardover {
+  from {
+    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+  }
+
+  to {
+    transform: perspective(400px);
+  }
+}
+
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.2, 1.2, 1.2);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes found {
+  from {
+    transform: scale3d(1, 1, 1);
+    background-color: : #4d8076;
+  }
+
+  50% {
+    transform: scale3d(1.2, 1.2, 1.2);
+    background-color: #4d8076;
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
   }
 }
