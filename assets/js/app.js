@@ -2,22 +2,22 @@ document.addEventListener("DOMContentLoaded", () => {
   alert("connected");
 
   const cardDeck = [
-    "fas fa-arrows-alt",
-    "fas fa-braille",
-    "fas fa-bacon",
-    "fas fa-check-double",
-    "fas fa-indent",
-    "fas fa-compress-arrows-alt",
-    "fas fa-crop-alt",
-    "fas fa-qrcode",
-    "fas fa-arrows-alt",
-    "fas fa-braille",
-    "fas fa-bacon",
-    "fas fa-check-double",
-    "fas fa-indent",
-    "fas fa-compress-arrows-alt",
-    "fas fa-crop-alt",
-    "fas fa-qrcode",
+    "col-2 fas fa-arrows-alt",
+    "col-2 fas fa-border-none",
+    "col-2 fas fa-asterisk",
+    "col-2 fas fa-check-double",
+    "col-2 fas fa-indent",
+    "col-2 fas fa-compress-arrows-alt",
+    "col-2 fas fa-crop-alt",
+    "col-2 fas fa-qrcode",
+    "col-2 fas fa-arrows-alt",
+    "col-2 fas fa-border-none",
+    "col-2 fas fa-asterisk",
+    "col-2 fas fa-check-double",
+    "col-2 fas fa-indent",
+    "col-2 fas fa-compress-arrows-alt",
+    "col-2 fas fa-crop-alt",
+    "col-2 fas fa-qrcode",
   ];
 
   const grid = document.querySelector(".grid");
@@ -28,22 +28,31 @@ document.addEventListener("DOMContentLoaded", () => {
   const timer = document.querySelector(".timer");
   const resetBtn = document.querySelectorAll(".play-again");
   const modal = document.getElementById("winpopup");
+  const closeIcon = document.querySelector(".close");
   var moves = 0;
   var cardsChosen = [];
   var cardsChosenId = [];
   var cardsWon = [];
-  notPlayable = [];
+  var second = 0;
+  var minute = 0;
+  var hour = 0;
+  var interval;
 
   // create your board
   function createBoard() {
     cardDeck.sort(() => Math.random() - 0.5);
     for (let i = 0; i < cardDeck.length; i++) {
       var card = document.createElement("span");
-      card.setAttribute("class", "box");
+      card.setAttribute("class", "box col-2");
       card.setAttribute("data-id", i);
       card.addEventListener("click", flipCard);
       grid.appendChild(card);
     }
+    second = 0;
+    minute = 0;
+    hour = 0;
+    timer.innerHTML = "0 mins 0 secs";
+    clearInterval(interval);
   }
 
   // check for matches
@@ -54,14 +63,13 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log(cardsChosenId[0]);
     console.log(cardsChosenId[1]);
     if (cardsChosen[0] === cardsChosen[1]) {
-      cards[optionOneId].setAttribute("class", "hidden-box");
-      cards[optionTwoId].setAttribute("class", "hidden-box");
+      cards[optionOneId].setAttribute("class", "hidden-box col-2");
+      cards[optionTwoId].setAttribute("class", "hidden-box col-2");
       cardsWon.push(optionOneId);
       cardsWon.push(optionTwoId);
     } else {
-      cards[optionOneId].setAttribute("class", "empty-box");
-      cards[optionTwoId].setAttribute("class", "empty-box");
-      alert("Sorry, Try Again");
+      cards[optionOneId].setAttribute("class", "empty-box col-2");
+      cards[optionTwoId].setAttribute("class", "empty-box col-2");
     }
     cardsChosen = [];
     cardsChosenId = [];
@@ -107,6 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
     clearInterval(interval);
     finalTime = timer.innerHTML;
     document.getElementById("totalTime").innerHTML = finalTime;
+    closeModal();
   }
   // Reset Game
   function resetGame() {
@@ -125,6 +134,33 @@ document.addEventListener("DOMContentLoaded", () => {
   function moveCounter() {
     moves = moves + 1;
     counter.textContent = moves;
+    if (moves == 1) {
+      second = 0;
+      minute = 0;
+      hour = 0;
+      startTimer();
+    }
+  }
+
+  function startTimer() {
+    interval = setInterval(function () {
+      timer.innerHTML = minute + "mins " + second + "secs";
+      second++;
+      if (second == 60) {
+        minute++;
+        second = 0;
+      }
+      if (minute == 60) {
+        hour++;
+        minute = 0;
+      }
+    }, 1000);
+  }
+
+  function closeModal() {
+    closeIcon.addEventListener("click", function (e) {
+      modal.classList.remove("show");
+    });
   }
 
   createBoard();
