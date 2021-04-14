@@ -58,7 +58,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const optionTwoId = cardsChosenId[1];
     if (cardsChosen[0] === cardsChosen[1]) {
       cards[optionOneId].setAttribute("class", "hidden-box col-2");
+      cards[optionOneId].removeEventListener("click", flipCard);
       cards[optionTwoId].setAttribute("class", "hidden-box col-2");
+      cards[optionTwoId].removeEventListener("click", flipCard);
       cardsWon.push(optionOneId, optionTwoId);
       alert("You found, a match!");
     } else {
@@ -77,21 +79,19 @@ document.addEventListener("DOMContentLoaded", () => {
   //flip your card
   function flipCard() {
     var flip = this.getAttribute("class");
-    if (flip !== "hidden-box") {
-      var cardId = this.getAttribute("data-id");
-      cardsChosenId.push(cardId);
-      if (cardsChosenId[0] !== cardsChosenId[1]) {
-        cardsChosen.push(cardDeck[cardId]);
-        this.setAttribute("class", cardDeck[cardId]);
-        console.log(cardsChosen[0]);
-        moveCounter();
-        if (cardsChosen.length === 2) {
-          console.log(cardsChosen[1]);
-          setTimeout(checkForMatch, 500);
-        }
-      } else {
-        setTimeout(cardsChosenId.pop(), 500);
+    var cardId = this.getAttribute("data-id");
+    cardsChosenId.push(cardId);
+    if (cardsChosenId[0] !== cardsChosenId[1]) {
+      cardsChosen.push(cardDeck[cardId]);
+      this.setAttribute("class", cardDeck[cardId]);
+      console.log(cardsChosen[0]);
+      moveCounter();
+      if (cardsChosen.length === 2) {
+        console.log(cardsChosen[1]);
+        setTimeout(checkForMatch, 500);
       }
+    } else {
+      setTimeout(cardsChosenId.pop(), 500);
     }
   }
 
