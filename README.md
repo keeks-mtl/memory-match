@@ -2,36 +2,60 @@
 
 ## Goal For This Project
 
-Welcome from Memory Match!
+Welcome from Memory Match, an intuitive game that anyone can play.
 
 ## Table of Contents
 
 ## UX
 
-An important aspect of the planning for this project was the element of User-Experience. Directing the planning of the project through a User-Experience approach created a useful guide to understand the user's needs and streamline the development of the site. Through visiting Memory Match, it was important to create a positive user experience.
+Memory Match is a minimally styled game created for anyone with a little time on their hands that wants to test their memory skills. Through visiting Memory Match, it was important to create a positive user experience.
 
-### User Goals
+### Player Goals
+
+- Play a fun game
+- Easy to play
+- Clear and intuitive gameplay without instructions
+  - Not a lot of buttons or areas to distract and only one main area to click
+- Not distracting on the eyes or busy
+  - simple colours and shapes
+- Visually keeps you intrested
+  - sleek design
 
 ### User Stories
 
+- Visual icons that arent distracting and easy to tell apart
+- visual feedback when choosing cards to be able to tell what is happening
+- clear buttons to press so not confused
+
 ### Game Creator Goals
+
+- a project that is interesting and requires some thought to code
 
 ### Wireframes
 
+- The wireframes were created using [Balsamiq] (http://www.balsamic.com) during the design and planning part of this project.
 - [Wireframes](link): A 6 page website.
 
 ### Design Choices
 
+- The game is meant to feel neat and mature so as to not feel infantile.
+
 ### Fonts
 
-- The goal was an overall cohesive feeling to the website so I decided not to use multiple fonts, choosing the font 'Roboto'.
+- The goal was an overall cohesive feeling so I decided not to use multiple fonts, choosing the font 'Roboto'.
 - I wanted something contemporary but also clean & clear. The font was chosen from [Google Fonts](https://fonts.google.com/) to make sure it worked across browsers/devices.
 
 ### Icons
 
+- the cards themselves use icons that should feel familiar. The icons were meant to be similiar enough that the those playing wouldn't find it too easy to remember where each card was.
+
 ### Colours
 
-- The colour theme included four main colours that complimented one another.
+- The colour theme included two main colours that complimented one another. Two complimentary blue colours where used so that there was a link to one another but also enough contrast so that everything didn't blend together.
+
+### Styling
+
+- The cards themselves were given rounded corners so that the game didn't seem too sharp or rigid. The buttons and win message shared the rounded corners to give a unifying feeling.
 
 ## Features
 
@@ -40,13 +64,39 @@ An important aspect of the planning for this project was the element of User-Exp
 
 ### Reset Button
 
+- The reset button is a button that stands out so that its easy to find
+- The reset button resets the cards on the board in random order and changes all the statistics back to zero.
+
 ### Matches Display
+
+- The matches display shows how many pairs the player has found.
 
 ### Moves Display
 
+- The moves display shows how many times the player has flipped over any card.
+
 ### Hard/Easy Button
 
+### Timer
+
+- With the other stats there is a timer that keeps track of how long it has taken for the player to find all the card.
+- the timer starts when the player flips over their first card
+
+### Congratulations Modal
+
+- Once the player has found all the matches a popup shows letting the player know they've won.
+- The popup lets the player know they've found all the pairs, how many moves it's taken, and how much time they've taken.
+- The popup lets the player choose to close the modal or replay the game.
+
+# Gameboard & Cards
+
+- The gameboard is where the cards are laid out so the player can choose one.
+- the grid is set out in rows of 4.
+
 ### Features Left to Implement
+
+- An extemely hard version of the game
+- high stats which everyone can compare their stats with others.
 
 ## Technologies Used
 
@@ -56,12 +106,12 @@ An important aspect of the planning for this project was the element of User-Exp
   - The base of the code for the overall structure of the site.
 - CSS3
   - For the styling of the site
-- ## Javascript
+- Javascript
 
 ### Libraries, Frameworks & Tools
 
 - [Font Awesome](https://fontawesome.com/)
-  - For the icons used as social media links
+  - The icons were used for the images for the cards
 - [Bootstrap](https://getbootstrap.com/)
   - Was used for added styling and responsiveness of the project
 - [Google Fonts](https://fonts.google.com/)
