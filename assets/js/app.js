@@ -23,10 +23,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const grid = document.querySelector(".grid");
   const resultDisplay = document.querySelector("#result");
-  // const resetButton = document.querySelector("#reset");
   const counter = document.querySelector("#moves");
   const totalFlips = document.querySelector("#final-moves");
   const timer = document.querySelector(".timer");
+  const resetBtn = document.querySelectorAll(".play-again");
+  const modal = document.getElementById("winpopup");
+  const closeIcon = document.querySelector(".close");
   let moves = 0;
   let cardsChosen = [];
   let cardsChosenId = [];
@@ -73,8 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
     cardsChosenId = [];
     resultDisplay.textContent = cardsWon.length / 2;
     if (cardsWon.length === cardDeck.length) {
-      // resultDisplay.textContent = "Congratulations! You've won!";
-      // clearInterval(interval);
       congratulations();
     }
   }
@@ -98,10 +98,25 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  //congratulations popup
+  function congratulations() {
+    modal.classList.add("show");
+    totalFlips.textContent = moves;
+    clearInterval(interval);
+    finalTime = timer.innerHTML;
+    document.getElementById("totalTime").innerHTML = finalTime;
+    closeModal();
+  }
+
   /* reset game
       clear board, create board, empty all arrays, & change all displays to 0
   */
-  resetButton.addEventListener("click", function () {
+  for (var i = 0; i < resetBtn.length; i++) {
+    resetBtn[i].addEventListener("click", resetGame);
+  }
+
+  function resetGame() {
+    modal.classList.remove("show");
     grid.innerHTML = "";
     createBoard();
     cardsWon = [];
