@@ -3,22 +3,22 @@ document.addEventListener("DOMContentLoaded", () => {
   alert("connected");
 
   const cardDeck = [
-    "fas fa-arrows-alt",
-    "fas fa-border-none",
-    "fas fa-asterisk",
-    "fas fa-check-double",
-    "fas fa-indent",
-    "fas fa-compress-arrows-alt",
-    "fas fa-crop-alt",
-    "fas fa-qrcode",
-    "fas fa-arrows-alt",
-    "fas fa-border-none",
-    "fas fa-asterisk",
-    "fas fa-check-double",
-    "fas fa-indent",
-    "fas fa-compress-arrows-alt",
-    "fas fa-crop-alt",
-    "fas fa-qrcode",
+    "col-2 fas fa-arrows-alt",
+    "col-2 fas fa-border-none",
+    "col-2 fas fa-asterisk",
+    "col-2 fas fa-check-double",
+    "col-2 fas fa-indent",
+    "col-2 fas fa-compress-arrows-alt",
+    "col-2 fas fa-crop-alt",
+    "col-2 fas fa-qrcode",
+    "col-2 fas fa-arrows-alt",
+    "col-2 fas fa-border-none",
+    "col-2 fas fa-asterisk",
+    "col-2 fas fa-check-double",
+    "col-2 fas fa-indent",
+    "col-2 fas fa-compress-arrows-alt",
+    "col-2 fas fa-crop-alt",
+    "col-2 fas fa-qrcode",
   ];
 
   const grid = document.querySelector(".grid");
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     cardDeck.sort(() => Math.random() - 0.5);
     for (let i = 0; i < cardDeck.length; i++) {
       var card = document.createElement("span");
-      card.setAttribute("class", "box");
+      card.setAttribute("class", "box col-2");
       card.setAttribute("data-id", i);
       card.addEventListener("click", flipCard);
       grid.appendChild(card);
@@ -48,13 +48,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const optionOneId = cardsChosenId[0];
     const optionTwoId = cardsChosenId[1];
     if (cardsChosen[0] === cardsChosen[1]) {
-      cards[optionOneId].setAttribute("class", "hidden-box");
-      cards[optionTwoId].setAttribute("class", "hidden-box");
+      cards[optionOneId].setAttribute("class", "hidden-box col-2");
+      cards[optionTwoId].setAttribute("class", "hidden-box col-2");
       cardsWon.push(optionOneId, optionTwoId);
       alert("You found, a match!");
     } else {
-      cards[optionOneId].setAttribute("class", "empty-box");
-      cards[optionTwoId].setAttribute("class", "empty-box");
+      cards[optionOneId].setAttribute("class", "empty-box col-2");
+      cards[optionTwoId].setAttribute("class", "empty-box col-2");
     }
     cardsChosen = [];
     cardsChosenId = [];
