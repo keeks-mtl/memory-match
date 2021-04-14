@@ -59,14 +59,19 @@ document.addEventListener("DOMContentLoaded", () => {
     clearInterval(interval);
   }
 
-  // check for matches
+  /* check for matches 
+    if cards match, changes card to blank space and pushes the card to cardsWon array.
+    calls congratulations function if found all matches. 
+  */
   function checkForMatch() {
     var cards = document.querySelectorAll("span");
     const optionOneId = cardsChosenId[0];
     const optionTwoId = cardsChosenId[1];
     if (cardsChosen[0] === cardsChosen[1]) {
       cards[optionOneId].setAttribute("class", "hidden-box col-2");
+      cards[optionOneId].removeEventListener("click", flipCard);
       cards[optionTwoId].setAttribute("class", "hidden-box col-2");
+      cards[optionTwoId].removeEventListener("click", flipCard);
       cardsWon.push(optionOneId);
       cardsWon.push(optionTwoId);
     } else {
@@ -77,8 +82,6 @@ document.addEventListener("DOMContentLoaded", () => {
     cardsChosenId = [];
     resultDisplay.textContent = cardsWon.length / 2;
     if (cardsWon.length === cardDeck.length) {
-      // resultDisplay.textContent = "Congratulations! You've won!";
-      // clearInterval(interval);
       congratulations();
     }
   }
@@ -86,21 +89,17 @@ document.addEventListener("DOMContentLoaded", () => {
   //flip your card
   function flipCard() {
     var flip = this.getAttribute("class");
-    if (flip !== "hidden-box") {
-      var cardId = this.getAttribute("data-id");
-      cardsChosenId.push(cardId);
-      if (cardsChosenId[0] !== cardsChosenId[1]) {
-        cardsChosen.push(cardDeck[cardId]);
-        this.setAttribute("class", cardDeck[cardId]);
-        console.log(cardsChosen[0]);
-        moveCounter();
-        if (cardsChosen.length === 2) {
-          console.log(cardsChosen[1]);
-          setTimeout(checkForMatch, 500);
-        }
-      } else {
-        setTimeout(cardsChosenId.pop(), 500);
+    var cardId = this.getAttribute("data-id");
+    cardsChosenId.push(cardId);
+    if (cardsChosenId[0] !== cardsChosenId[1]) {
+      cardsChosen.push(cardDeck[cardId]);
+      this.setAttribute("class", cardDeck[cardId]);
+      moveCounter();
+      if (cardsChosen.length === 2) {
+        setTimeout(checkForMatch, 500);
       }
+    } else {
+      setTimeout(cardsChosenId.pop(), 500);
     }
   }
 
