@@ -34,10 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let cardsChosen = [];
   let cardsChosenId = [];
   let cardsWon = [];
-  let second = 0;
-  let minute = 0;
-  let hour = 0;
-  let interval;
 
   /* create the board 
     shuffle array with cards, add cards to board grid in html, 
@@ -157,6 +153,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  /* startTimer function
+  adds time to html & increases by 60 for secs & mins 
+*/
+  let second = 0;
+  let minute = 0;
+  let hour = 0;
+  let interval;
   function startTimer() {
     interval = setInterval(function () {
       timer.innerHTML = minute + "mins " + second + "secs";
