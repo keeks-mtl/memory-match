@@ -23,8 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const grid = document.querySelector(".grid");
   const resultDisplay = document.querySelector("#result");
-  const resetButton = document.querySelector("#reset");
+  // const resetButton = document.querySelector("#reset");
   const counter = document.querySelector("#moves");
+  const totalFlips = document.querySelector("#final-moves");
   const timer = document.querySelector(".timer");
   let moves = 0;
   let cardsChosen = [];
@@ -61,7 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
       cards[optionOneId].removeEventListener("click", flipCard);
       cards[optionTwoId].setAttribute("class", "hidden-box col-2");
       cards[optionTwoId].removeEventListener("click", flipCard);
-      cardsWon.push(optionOneId, optionTwoId);
+      cardsWon.push(optionOneId);
+      cardsWon.push(optionTwoId);
       alert("You found, a match!");
     } else {
       cards[optionOneId].setAttribute("class", "empty-box col-2");
@@ -71,8 +73,9 @@ document.addEventListener("DOMContentLoaded", () => {
     cardsChosenId = [];
     resultDisplay.textContent = cardsWon.length / 2;
     if (cardsWon.length === cardDeck.length) {
-      resultDisplay.textContent = "Congratulations! You've won!";
-      clearInterval(interval);
+      // resultDisplay.textContent = "Congratulations! You've won!";
+      // clearInterval(interval);
+      congratulations();
     }
   }
 
@@ -107,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
     moves = 0;
     resultDisplay.textContent = 0;
     counter.textContent = moves;
-  });
+  }
 
   /* Move counter function
     counts amount of cards flipped & starts timer when first card is flipped 
@@ -138,6 +141,12 @@ document.addEventListener("DOMContentLoaded", () => {
         minute = 0;
       }
     }, 1000);
+  }
+
+  function closeModal() {
+    closeIcon.addEventListener("click", function (e) {
+      modal.classList.remove("show");
+    });
   }
 
   createBoard();
