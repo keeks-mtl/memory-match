@@ -139,10 +139,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   //game timer
-  var second = 0;
-  var minute = 0;
-  var hour = 0;
-  var interval;
+  let second = 0;
+  let minute = 0;
+  let hour = 0;
+  let interval;
   function startTimer() {
     interval = setInterval(function () {
       timer.innerHTML = minute + "mins " + second + "secs";
