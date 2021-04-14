@@ -33,9 +33,21 @@ h4 {
   margin: auto;
 }*/
 
+#easy {
+  background-color: #d3e9ee;
+  color: #000;
+  border-color: #d3e9ee;
+}
+
+#hard {
+  background-color: #fff;
+  color: #000;
+  border-color: #d3e9ee;
+}
+
 .play-again {
   background-color: #4d8076;
-  border-radius: 45%;
+  /* border-radius: 45%; */
   border-color: #4d8076;
 }
 
