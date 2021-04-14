@@ -107,14 +107,13 @@ document.addEventListener("DOMContentLoaded", () => {
     counter.textContent = moves;
   });
 
-  //move counter
+  /* Move counter function
+    counts amount of cards flipped & starts timer when first card is flipped 
+  */
   function moveCounter() {
     moves = moves + 1;
     counter.textContent = moves;
     if (moves == 1) {
-      second = 0;
-      minute = 0;
-      hour = 0;
       startTimer();
     }
   }
