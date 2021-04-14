@@ -128,7 +128,13 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("totalTime").innerHTML = finalTime;
     closeModal();
   }
-  // Reset Game
+  /* reset game
+  clear board, create board, empty all arrays, & change all displays to 0
+*/
+  for (var i = 0; i < resetBtn.length; i++) {
+    resetBtn[i].addEventListener("click", resetGame);
+  }
+
   function resetGame() {
     modal.classList.remove("show");
     grid.innerHTML = "";
