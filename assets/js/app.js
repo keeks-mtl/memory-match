@@ -26,14 +26,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const resetButton = document.querySelector("#reset");
   const counter = document.querySelector("#moves");
   const timer = document.querySelector(".timer");
-  var moves = 0;
-  var cardsChosen = [];
-  var cardsChosenId = [];
-  var cardsWon = [];
-  var second = 0;
-  var minute = 0;
-  var hour = 0;
-  var interval;
+  let moves = 0;
+  let cardsChosen = [];
+  let cardsChosenId = [];
+  let cardsWon = [];
 
   // create your board
   function createBoard() {
@@ -120,6 +116,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  //game timer
+  var second = 0;
+  var minute = 0;
+  var hour = 0;
+  var interval;
   function startTimer() {
     interval = setInterval(function () {
       timer.innerHTML = minute + "mins " + second + "secs";
