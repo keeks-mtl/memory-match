@@ -4,26 +4,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const cardDeck = [
     "col-2 fas fa-arrows-alt",
-    "col-2 fas fa-border-none",
-    "col-2 fas fa-asterisk",
-    "col-2 fas fa-check-double",
-    "col-2 fas fa-indent",
-    "col-2 fas fa-compress-arrows-alt",
-    "col-2 fas fa-crop-alt",
-    "col-2 fas fa-qrcode",
     "col-2 fas fa-arrows-alt",
     "col-2 fas fa-border-none",
+    "col-2 fas fa-border-none",
+    "col-2 fas fa-asterisk",
     "col-2 fas fa-asterisk",
     "col-2 fas fa-check-double",
+    "col-2 fas fa-check-double",
+    "col-2 fas fa-indent",
     "col-2 fas fa-indent",
     "col-2 fas fa-compress-arrows-alt",
+    "col-2 fas fa-compress-arrows-alt",
     "col-2 fas fa-crop-alt",
+    "col-2 fas fa-crop-alt",
+    "col-2 fas fa-qrcode",
     "col-2 fas fa-qrcode",
   ];
 
   const grid = document.querySelector(".grid");
   const resultDisplay = document.querySelector("#result");
-  // const resetButton = document.querySelector("#reset");
   const counter = document.querySelector("#moves");
   const totalFlips = document.querySelector("#final-moves");
   const timer = document.querySelector(".timer");
