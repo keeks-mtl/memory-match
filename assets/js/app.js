@@ -25,15 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const resultDisplay = document.querySelector("#result");
   const resetButton = document.querySelector("#reset");
   const counter = document.querySelector("#moves");
-  const timer = document.querySelector(".timer");
   var moves = 0;
   var cardsChosen = [];
   var cardsChosenId = [];
   var cardsWon = [];
-  var second = 0;
-  var minute = 0;
-  var hour = 0;
-  var interval;
 
   // create your board
   function createBoard() {
@@ -45,11 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
       card.addEventListener("click", flipCard);
       grid.appendChild(card);
     }
-    second = 0;
-    minute = 0;
-    hour = 0;
-    timer.innerHTML = "0 mins 0 secs";
-    clearInterval(interval);
   }
 
   // check for matches
@@ -71,7 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
     resultDisplay.textContent = cardsWon.length / 2;
     if (cardsWon.length === cardDeck.length) {
       resultDisplay.textContent = "Congratulations! You've won!";
-      clearInterval(interval);
     }
   }
 
@@ -112,27 +101,6 @@ document.addEventListener("DOMContentLoaded", () => {
   function moveCounter() {
     moves = moves + 1;
     counter.textContent = moves;
-    if (moves == 1) {
-      second = 0;
-      minute = 0;
-      hour = 0;
-      startTimer();
-    }
-  }
-
-  function startTimer() {
-    interval = setInterval(function () {
-      timer.innerHTML = minute + "mins " + second + "secs";
-      second++;
-      if (second == 60) {
-        minute++;
-        second = 0;
-      }
-      if (minute == 60) {
-        hour++;
-        minute = 0;
-      }
-    }, 1000);
   }
 
   createBoard();
