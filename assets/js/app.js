@@ -95,7 +95,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  //reset button
+  /* reset game
+      clear board, create board, empty all arrays, & change all displays to 0
+  */
   resetButton.addEventListener("click", function () {
     grid.innerHTML = "";
     createBoard();
