@@ -30,14 +30,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const resetBtn = document.querySelectorAll(".play-again");
   const modal = document.getElementById("winpopup");
   const closeIcon = document.querySelector(".close");
-  var moves = 0;
-  var cardsChosen = [];
-  var cardsChosenId = [];
-  var cardsWon = [];
-  var second = 0;
-  var minute = 0;
-  var hour = 0;
-  var interval;
+  let moves = 0;
+  let cardsChosen = [];
+  let cardsChosenId = [];
+  let cardsWon = [];
+  let second = 0;
+  let minute = 0;
+  let hour = 0;
+  let interval;
 
   // create your board
   function createBoard() {
