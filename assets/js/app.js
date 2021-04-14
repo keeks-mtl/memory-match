@@ -99,21 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  //reset button
-  for (var i = 0; i < resetBtn.length; i++) {
-    resetBtn[i].addEventListener("click", resetGame);
-  }
-  // resetButton.addEventListener("click", function () {
-  //   grid.innerHTML = "";
-  //   createBoard();
-  //   cardsWon = [];
-  //   cardsChosenId = [];
-  //   cardsChosen = [];
-  //   moves = 0;
-  //   resultDisplay.textContent = 0;
-  //   counter.textContent = moves;
-  // });
-
   /* congratulations popup 
     shows modal and adds the moves & time to popup
   */
@@ -125,6 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("totalTime").innerHTML = finalTime;
     closeModal();
   }
+
   /* reset game
   clear board, create board, empty all arrays, & change all displays to 0
 */
