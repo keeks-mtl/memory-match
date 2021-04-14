@@ -29,10 +29,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const resetBtn = document.querySelectorAll(".play-again");
   const modal = document.getElementById("winpopup");
   const closeIcon = document.querySelector(".close");
+  const easy = document.querySelector("#easy");
+  const hard = document.querySelector("#hard");
   let moves = 0;
   let cardsChosen = [];
   let cardsChosenId = [];
   let cardsWon = [];
+  let easySetting = 8;
+  let hardSetting = cardDeck.length;
 
   /* create the board 
     shuffle array with cards, add cards to board grid in html, 
