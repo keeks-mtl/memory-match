@@ -39,7 +39,10 @@ document.addEventListener("DOMContentLoaded", () => {
   let hour = 0;
   let interval;
 
-  // create your board
+  /* create the board 
+    shuffle array with cards, add cards to board grid in html, 
+    add event listener to each card, and set timer to 0
+  */
   function createBoard() {
     cardDeck.sort(() => Math.random() - 0.5);
     for (let i = 0; i < cardDeck.length; i++) {
@@ -52,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     second = 0;
     minute = 0;
     hour = 0;
-    timer.innerHTML = "0 mins 0 secs";
+    timer.innerHTML = minute + "mins " + second + "secs";
     clearInterval(interval);
   }
 
