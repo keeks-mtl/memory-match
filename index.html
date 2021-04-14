@@ -26,11 +26,29 @@
     <div class="title-box container">
       <h1>Memory Game</h1>
       <h4>Matches: <button class="btn btn-light" id="result">0</button></h4>
-      <h4>Moves: <button class="btn btn-light" id="moves">0</button></h4>
-      <h4><button class="btn btn-light" id="reset">Reset</button></h4>
+      <h4>Moves: <button class="btn btn-light moves" id="moves">0</button></h4>
+      <h4><button class="btn play-again">Reset</button></h4>
+      <div class="timer"></div>
     </div>
     <div class="container-fluid" id="game-box">
       <div class="grid justify-content-center"></div>
+    </div>
+
+    <div id="winpopup" class="overlay show">
+      <div class="card popup">
+        <div class="card-header">
+          <h3>Congratulations!</h3>
+          <a class="close" href="#">×</a>
+        </div>
+        <div class="card-body text-center">
+          <h5>You've Found All the Matches</h5>
+          <p>Moves:<button class="btn btn-light" id="final-moves">0</button></p>
+          <p>Total Time: <span id="totalTime"></span></p>
+        </div>
+        <div class="card-footer text-center">
+          <button class="btn play-again">Play Again</button>
+        </div>
+      </div>
     </div>
 
     <script src="assets/js/app.js"></script>
