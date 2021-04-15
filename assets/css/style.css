@@ -33,13 +33,13 @@ h4 {
   margin: auto;
 }*/
 
-#easy {
+button.selected {
   background-color: #d3e9ee;
   color: #000;
   border-color: #d3e9ee;
 }
 
-#hard {
+.difficulty {
   background-color: #fff;
   color: #000;
   border-color: #d3e9ee;

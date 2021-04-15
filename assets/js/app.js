@@ -29,22 +29,30 @@ document.addEventListener("DOMContentLoaded", () => {
   const resetBtn = document.querySelectorAll(".play-again");
   const modal = document.getElementById("winpopup");
   const closeIcon = document.querySelector(".close");
-  const easy = document.querySelector("#easy");
-  const hard = document.querySelector("#hard");
+  const modeButtons = document.querySelectorAll(".difficulty");
   let moves = 0;
   let cardsChosen = [];
   let cardsChosenId = [];
   let cardsWon = [];
-  let easySetting = 8;
-  let hardSetting = cardDeck.length;
+  let setting = 8;
+  let difficulty = setting;
+  // let easySetting = 8;
+  // let hardSetting = cardDeck.length;
+  let playingCards = [];
 
+  // shuffle cards
+  function shuffleCards() {
+    playingCards = cardDeck;
+    playingCards.length = difficulty;
+    playingCards.sort(() => Math.random() - 0.5);
+  }
   /* create the board 
     shuffle array with cards, add cards to board grid in html, 
     add event listener to each card, and set timer to 0
   */
   function createBoard() {
-    cardDeck.sort(() => Math.random() - 0.5);
-    for (let i = 0; i < cardDeck.length; i++) {
+    shuffleCards();
+    for (let i = 0; i < playingCards.length; i++) {
       var card = document.createElement("span");
       card.setAttribute("class", "box col-2");
       card.setAttribute("data-id", i);
