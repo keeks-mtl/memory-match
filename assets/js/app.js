@@ -40,18 +40,30 @@ document.addEventListener("DOMContentLoaded", () => {
   // let hardSetting = cardDeck.length;
   let playingCards = [];
 
+  // difficulty setting
+  for (let i = 0; i < modeButtons.length; i++) {
+    modeButtons[i].addEventListener("click", function () {
+      modeButtons[0].classList.remove("selected");
+      modeButtons[1].classList.remove("selected");
+      this.classList.add("selected");
+      this.textContent === "Easy" ? (setting = 8) : (setting = 16);
+      shuffleCards();
+    });
+  }
+
   // shuffle cards
   function shuffleCards() {
     playingCards = cardDeck;
-    playingCards.length = difficulty;
+    playingCards.length = setting;
     playingCards.sort(() => Math.random() - 0.5);
+    grid.innerHTML = "";
+    createBoard();
   }
   /* create the board 
     shuffle array with cards, add cards to board grid in html, 
     add event listener to each card, and set timer to 0
   */
   function createBoard() {
-    shuffleCards();
     for (let i = 0; i < playingCards.length; i++) {
       var card = document.createElement("span");
       card.setAttribute("class", "box col-2");
@@ -181,5 +193,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  createBoard();
+  shuffleCards();
 });
