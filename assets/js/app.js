@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   alert("connected");
 
-  const cardDeck = [
+  const cardArray = [
     "col-2 fas fa-arrows-alt",
     "col-2 fas fa-arrows-alt",
     "col-2 fas fa-border-none",
@@ -34,11 +34,9 @@ document.addEventListener("DOMContentLoaded", () => {
   let cardsChosen = [];
   let cardsChosenId = [];
   let cardsWon = [];
-  let setting = 8;
+  let setting = 16;
   let difficulty = setting;
-  // let easySetting = 8;
-  // let hardSetting = cardDeck.length;
-  let playingCards = [];
+  let cardDeck = [];
 
   // difficulty setting
   for (let i = 0; i < modeButtons.length; i++) {
@@ -53,18 +51,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // shuffle cards
   function shuffleCards() {
-    playingCards = cardDeck;
-    playingCards.length = setting;
-    playingCards.sort(() => Math.random() - 0.5);
+    cardDeck = [];
+    cardDeck.push(...cardArray);
+    cardDeck.length = setting;
+    cardDeck.sort(() => Math.random() - 0.5);
     grid.innerHTML = "";
     createBoard();
   }
+
   /* create the board 
     shuffle array with cards, add cards to board grid in html, 
     add event listener to each card, and set timer to 0
   */
   function createBoard() {
-    for (let i = 0; i < playingCards.length; i++) {
+    for (let i = 0; i < cardDeck.length; i++) {
       var card = document.createElement("span");
       card.setAttribute("class", "box col-2");
       card.setAttribute("data-id", i);
