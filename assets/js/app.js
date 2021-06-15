@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
       modeButtons[1].classList.remove("selected");
       this.classList.add("selected");
       this.textContent === "Easy" ? (setting = 8) : (setting = 16);
-      shuffleCards();
+      resetGame();
     });
   }
 
