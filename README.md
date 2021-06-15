@@ -40,11 +40,11 @@ memory skills.
 
 **Desktop site**
 
-<img src="assets/images/readme/desktop.PNG" width=400 height=400>
+<img src="assets/images/readme/mmdesktopbalsamiq.PNG" width=400 height=400>
 
 **Mobile site**
 
-<img src="assets/images/readme/iphone.PNG" width=100 height=200>
+<img src="assets/images/readme/mmphonebalsamiq.PNG">
 
 ### Design Choices	
 - The game is meant to feel neat and mature so as to not feel infantile.
