@@ -35,7 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let cardsChosenId = [];
   let cardsWon = [];
   let setting = 16;
-  let difficulty = setting;
   let cardDeck = [];
 
   // difficulty setting
@@ -106,9 +105,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  //flip your card
+  /* card flipping function
+    gets cards data-id and adds it to cardsChosenId array
+    makes sure second card chosen isn't the first card
+    adds card to cardsChosen array
+    start moveCounter()
+    if two cards chosen then starts checkForMatch()
+  */
+
   function flipCard() {
-    var flip = this.getAttribute("class");
     var cardId = this.getAttribute("data-id");
     cardsChosenId.push(cardId);
     if (cardsChosenId[0] !== cardsChosenId[1]) {
@@ -130,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
     modal.classList.add("show");
     totalFlips.textContent = moves;
     clearInterval(interval);
-    finalTime = timer.innerHTML;
+    let finalTime = timer.innerHTML;
     document.getElementById("totalTime").innerHTML = finalTime;
     closeModal();
   }
