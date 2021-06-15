@@ -64,6 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
     add event listener to each card, and set timer to 0
   */
   function createBoard() {
+    cardDeck.sort(() => Math.random() - 0.5);
     for (let i = 0; i < cardDeck.length; i++) {
       var card = document.createElement("span");
       card.setAttribute("class", "box col-2");
