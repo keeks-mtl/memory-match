@@ -1,4 +1,6 @@
 # Memory Match	
+<img src="assets/images/readme/mockups.PNG">
+
 ## Goal For This Project	
 Welcome from Memory Match, an intuitive game that anyone can play.
 Memory Match is an online card memory game that is targeted at users that enjoy logic and/or brain games.
@@ -37,10 +39,10 @@ memory skills.
     of this project.
 
 **Desktop site**
-<img src="assets/images/readme/**" width=400 height=400>
+<img src="assets/images/readme/desktop.png" width=400 height=400>
 
 **Mobile site**
-<img src="assets/images/readme/**" width=400 height=400>
+<img src="assets/images/readme/iphone.png" width=300 height=300>
 
 ### Design Choices	
 - The game is meant to feel neat and mature so as to not feel infantile.
@@ -204,6 +206,13 @@ memory skills.
 - If you click twice on a pair of cards you've already matched then you can match them again.	
 #### Fix	
 - removed the click listener to the cards when they've been matched	
+
+### Change difficulty Bug
+#### Bug 
+- If you start playing and then click on a difficulty button it reshuffles the cards and changes the 
+    difficulty setting but doesn't reset the counters to zero. 
+#### Fix
+- Changed the function called at the end of the difficulty function to resetGame() instead of shuffleCards().
 
 ## Deployment	
 
