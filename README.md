@@ -39,10 +39,12 @@ memory skills.
     of this project.
 
 **Desktop site**
-<img src="assets/images/readme/desktop.png" width=400 height=400>
+
+<img src="assets/images/readme/desktop.PNG" width=400 height=400>
 
 **Mobile site**
-<img src="assets/images/readme/iphone.png" width=300 height=300>
+
+<img src="assets/images/readme/iphone.PNG" width=100 height=200>
 
 ### Design Choices	
 - The game is meant to feel neat and mature so as to not feel infantile.
@@ -61,8 +63,10 @@ memory skills.
 #### Colours	
 - The colour theme included two main colours that complimented one another. Two complimentary blue colours 
     where used so that there was a link to one another but also enough contrast so that everything didn't blend together.
+
 **Colors Used**
-<img src="assets/images/readme/mmcolortheme.png" width=400 height=400>
+
+<img src="assets/images/readme/mmcolortheme.PNG">
 
 #### Styling	
 - The cards themselves were given rounded corners so that the game didn't seem too sharp or rigid. The buttons and 
@@ -71,7 +75,8 @@ memory skills.
 ## Features	
 
 ### Game Header
-<img src="assets/images/readme/gameheader.png" width=400 height=400>
+
+<img src="assets/images/readme/gameheader.PNG">
 
 - Area of the game that shows the main information important to playing the game. 
 
@@ -95,19 +100,20 @@ memory skills.
     presses their first card. 
 
 ### Congratulations Modal	
-<img src="assets/images/readme/winmodal.png" width=400 height=400>
+<img src="assets/images/readme/winmodal.PNG">
 
 - Once the player has found all the matches a popup shows letting the player know they've won.	
 - The popup lets the player know they've found all the pairs, how many moves it has taken, and how much time they've taken.	
 - The popup lets the player choose to close the modal or replay the game.	
 
 ### Gameboard & Cards	
-<img src="assets/images/readme/gameplayingarea.png" width=400 height=400>
+<img src="assets/images/readme/gameplayingarea.PNG" width=400 height=400>
 
 - The gameboard is where the cards are laid out so the player can choose one.	
 - the grid is set out in rows of 4.	
 - Once a card is pressed on the gameboard the card flips around and shows the icon. 
-<img src="assets/images/readme/card.png" width=400 height=400>
+
+<img src="assets/images/readme/card.PNG">
 
 - Once two matching cards are found the disapear.
 
