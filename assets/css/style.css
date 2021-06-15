@@ -48,6 +48,7 @@ button.selected {
   background-color: white;
   border-radius: 45%;
 }
+
 .col-2 {
   margin: 2%;
   border-radius: 10px;
@@ -61,21 +62,16 @@ button.selected {
   cursor: pointer;
 }
 
-.hidden-box {
-  background-color: #d3e9ee;
-  height: 100px;
-  animation-name: found;
-  animation-duration: .75s;
-}
-
 .box:hover {
   background-color: #3d665e;
   animation-name: pulse;
   animation-duration: .75s;
 }
-.empty-box:hover {
-  background-color: #3d665e;
-  animation-name: pulse;
+
+.hidden-box {
+  background-color: #d3e9ee;
+  height: 100px;
+  animation-name: found;
   animation-duration: .75s;
 }
 
@@ -94,9 +90,16 @@ button.selected {
   height: 100px;
   background-color: #4d8076;
   border: 2px solid #d3e9ee;
+  cursor: pointer;
   animation-name: pulse;
   animation-duration: .75s;
   animation-iteration-count: 1;
+}
+
+.empty-box:hover {
+  background-color: #3d665e;
+  animation-name: pulse;
+  animation-duration: .75s;
 }
 
 /* overlay */
@@ -111,6 +114,7 @@ button.selected {
   visibility: hidden;
   opacity: 0;
 }
+
 .popup {
   margin: 35% auto;
   border-radius: 25px;
@@ -118,6 +122,7 @@ button.selected {
   position: relative;
   transition: all 5s ease-in-out;
 }
+
 .card-header .close {
   transition: all 200ms;
   font-weight: 900;
@@ -127,6 +132,7 @@ button.selected {
   top: -2%;
   right: 1%;
 }
+
 .show {
   visibility: visible !important;
   opacity: 1 !important;
@@ -135,13 +141,16 @@ button.selected {
 h3 {
   display: inline;
 }
+
 p {
   display: inline;
 }
+
 .card-header .play-again {
   display: block;
 }
 
+/* media queries */
 @media only screen and (max-width: 320px) {
   .fas {
     font-size: 55px;
