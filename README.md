@@ -7,7 +7,63 @@ Memory Match is an online card memory game that is targeted at users that enjoy 
 
 The live site can be found [here](https://keeks-mtl.github.io/memory-match/).
 
-## Table of Contents	
+## Table of Contents
+- [Memory Match](#memory-match)
+  * [Goal For This Project](#goal-for-this-project)
+  * [Table of Contents](#table-of-contents)
+  * [UX](#ux)
+    + [Player Goals](#player-goals)
+    + [User Stories](#user-stories)
+    + [Game Creator Goals](#game-creator-goals)
+    + [Wireframes](#wireframes)
+      - [Modifications On Original Design](#modifications-on-original-design)
+    + [Design Choices](#design-choices)
+      - [Fonts](#fonts)
+      - [Icons](#icons)
+      - [Colours](#colours)
+      - [Styling](#styling)
+  * [Features](#features)
+    + [Game Header](#game-header)
+      - [Matches Display](#matches-display)
+      - [Moves Display](#moves-display)
+      - [Difficulty Buttons](#difficulty-buttons)
+      - [Reset Button](#reset-button)
+      - [Timer Display](#timer-display)
+    + [Congratulations Modal](#congratulations-modal)
+    + [Gameboard & Cards](#gameboard---cards)
+    + [Features Left to Implement](#features-left-to-implement)
+  * [Technologies Used](#technologies-used)
+    + [Languages](#languages)
+    + [Libraries, Frameworks & Tools](#libraries--frameworks---tools)
+  * [Testing](#testing)
+    + [Compatibility Testing](#compatibility-testing)
+    + [Performance & Accessibility Testing](#performance---accessibility-testing)
+    + [User Story Testing](#user-story-testing)
+    + [Manual Testing](#manual-testing)
+      - [Difficulty Testing](#difficulty-testing)
+      - [Gameplay Testing](#gameplay-testing)
+      - [Reset Button Testing](#reset-button-testing)
+      - [WinModal Testing](#winmodal-testing)
+  * [Bugs](#bugs)
+    + [Cards Not Shuffling After Reset](#cards-not-shuffling-after-reset)
+      - [Bug](#bug)
+      - [Fix](#fix)
+    + [Can Match Same Square](#can-match-same-square)
+      - [Bug](#bug-1)
+      - [Fix](#fix-1)
+    + [Match Matched Cards](#match-matched-cards)
+      - [Bug](#bug-2)
+      - [Fix](#fix-2)
+    + [Change Difficulty Bug](#change-difficulty-bug)
+      - [Bug](#bug-3)
+      - [Fix](#fix-3)
+  * [Deployment](#deployment)
+    + [Publishing](#publishing)
+    + [Forking](#forking)
+    + [Cloning](#cloning)
+  * [Credits - Content - Media -Inspiration](#credits---content---media--inspiration)
+  * [Acknowledgements](#acknowledgements)
+  	
 ## UX	
 Memory Match is a minimally styled game created for anyone with a little time on their hands that wants to test their 
 memory skills.
@@ -19,7 +75,7 @@ memory skills.
   - Not a lot of buttons or areas to distract and only one main area to click	
 - Not distracting on the eyes or busy	
   - simple colours and shapes	
-- Visually keeps you intrested	
+- Visually keeps you interested	
   - sleek design	
 
 ### User Stories
@@ -62,7 +118,7 @@ memory skills.
     from [Google Fonts](https://fonts.google.com/) to make sure it worked across browsers/devices.	
 
 #### Icons	
-- The cards themselves use icons that should feel familiar. The icons were meant to be similiar enough that 
+- The cards themselves use icons that should feel familiar. The icons were meant to be similar enough that 
     those playing wouldn't find it too easy to remember where each card was.
 - The icons themselves are from [FontAwesome](https://fontawesome.com/) and are icons associated with computers
     so they would look familiar to most who have used computers before. 
@@ -118,15 +174,15 @@ memory skills.
 <img src="assets/images/readme/gameplayingarea.PNG" width=400 height=400>
 
 - The gameboard is where the cards are laid out so the player can choose one.	
-- the grid is set out in rows of 4.	
+- The grid is set out in rows of 4.	
 - Once a card is pressed on the gameboard the card flips around and shows the icon. 
 
 <img src="assets/images/readme/card.PNG">
 
-- Once two matching cards are found they disapear.
+- Once two matching cards are found they disappear.
 
 ### Features Left to Implement	
-- An extemely hard version of the game	
+- An extremely hard version of the game	
 - High stats which everyone can compare their stats with one another.
 
 ## Technologies Used	
@@ -135,7 +191,7 @@ memory skills.
     - The base of the code for the overall structure of the site.	
 - CSS3	
     - For the styling of the site	
-- Javascript
+- JavaScript
     - For the game logic.
 
 ### Libraries, Frameworks & Tools	
@@ -158,7 +214,8 @@ memory skills.
 - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)	
   - Used as a CSS validator
 - [JSHint](https://jshint.com/)	
-  - Used as a javascript validator
+  - Used as a JavaScript validator
+
 ## Testing	
 - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) 
     - Used to validate CSS code.
@@ -171,9 +228,22 @@ memory skills.
 <img src="assets/images/readme/mmhtmlvalidator.PNG">
 
 - [JSHint](https://jshint.com/)	
-    - Used to validate Javascript code. 
+    - Used to validate JavaScript code. 
 
 <img src="assets/images/readme/mmjshint.PNG">
+
+### Compatibility Testing
+- The site was tested on Chrome & Edge browsers to check compatibility across browsers.
+- The site was also tested on a laptop, an iPhone X, and Samsung Galaxy S20. The site was 
+    also checked through Google Chrome Developer Tools to check other device sizes and test
+    responsiveness. 
+
+### Performance & Accessibility Testing 
+- Google's Lighthouse tool was used to test the performance of the site to see if there were any issues.
+- After the initial test showed a slightly low accessibility score, the reset button font color was changed
+    to white and the final test results are as shown:
+
+<img src="assets/images/readme/mmlighthouse.PNG">
 
 ### User Story Testing
 
@@ -190,22 +260,22 @@ memory skills.
     - Test the game on multiple device sizes and check how easy it is to see the game and play
 
 ### Manual Testing
-#### Difficulty testing
+#### Difficulty Testing
 - Press the Easy button and make sure there are only 8 cards showing
 - Press the Hard button and make sure there are 16 cards showing
 - Press a card and then press a a difficulty button and make sure the amount of cards changes and 
     the display buttons return to 0. 
 
-#### Gameplay testing
+#### Gameplay Testing
 - Press one card and then press the same card again and make sure nothing happens. 
 - Press an empty space and make sure nothing happens.
 
-#### Reset Button testing
+#### Reset Button Testing
 - Press a card and then press the reset button and make sure all counters return to zero.
 - Press Easy button and then press reset button and make sure game stays on easy
 - Press Hard button and then press reset button and make sure game stays on easy
 
-#### WinModal testing
+#### WinModal Testing
 - Find all matches and then press x on win modal and make sure the modal closes and the counters don't change.
 - Find all matches and then press the play again button and make sure the modal closes and all the 
     counters return to zero. 
@@ -218,19 +288,19 @@ memory skills.
 #### Fix	
 - Found that I had put the sorting of the cards outside of the create board function	
 
-### Can match same square	
+### Can Match Same Square	
 #### Bug	
 - If you click twice on the same square you get a match.	
 #### Fix	
-- added an if statement so can't click on same square twice	
+- Added an if statement so can't click on same square twice	
 
-### Match matched cards	
+### Match Matched Cards	
 #### Bug	
 - If you click twice on a pair of cards you've already matched then you can match them again.	
 #### Fix	
 - removed the click listener to the cards when they've been matched	
 
-### Change difficulty Bug
+### Change Difficulty Bug
 #### Bug 
 - If you start playing and then click on a difficulty button it reshuffles the cards and changes the 
     difficulty setting but doesn't reset the counters to zero. 
@@ -239,7 +309,7 @@ memory skills.
 
 ## Deployment	
 
-- Visual studio code was used as a development enviroment where i commited all changes to git version control system.
+- Visual studio code was used as a development environment where I committed all changes to git version control system.
 - All changes were pushed to GitHub. 
 - This project has been deployed using GitHub pages and I have used the following process to do so:	
 
@@ -256,21 +326,21 @@ The live site can be found [here](https://keeks-mtl.github.io/memory-match/)
 You can fork a project to make a copy without it affecting the main branch with this process:	
 - Log in to GitHub and find the repository that you wish to fork	
 - Clicked on the repository and on the top right-hand side you will see three options: 'unwatch' 'star' and 'fork'	
-- Once the fork button has been clicked, a copy of the repository will be in your Github account	
+- Once the fork button has been clicked, a copy of the repository will be in your GitHub account	
 
 ### Cloning	
 You can clone the repository to your local device following these steps:	
-- Choose the Github repository that you'd like	
+- Choose the GitHub repository that you'd like	
 - Click the 'code' button at the top right next to 'add file'	
 - Copy the link that pops up	
 - Open your terminal and choose the directory you would like the clone to be in	
 - Type 'git clone' and paste the URL you copied afterwards and then click enter
 
-### Credits - Content - Media -Inspiration
+## Credits - Content - Media -Inspiration
 - [Code with Ania Kubów's youtube video](https://www.youtube.com/watch?v=tjyDOHzKN0w)
-    - The base Javascript code for the game that was adapted to my needs
+    - The base JavaScript code for the game that was adapted to my needs
 - [Javascript.info](https://javascript.info/task/shuffle)	
-    - radomising the array for different cards
+    - Radomising the array for different cards
 - [stackoverflow](https://stackoverflow.com/questions/34278816/how-to-add-a-timer-in-html5-and-javascript)
     - How to set timer
 - [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
@@ -280,7 +350,7 @@ You can clone the repository to your local device following these steps:
 - [w3 Schools](https://www.w3schools.com/howto/howto_css_flip_card.asp)
     - How to do a flip card animation
 
-### Acknowledgements	
+## Acknowledgements	
 - Special thanks to my mentor for advice and feedback
 - The students on Slack for peer review and comments
 - My friends for their endless support, feedback and testing
