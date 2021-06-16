@@ -46,8 +46,15 @@ memory skills.
 
 <img src="assets/images/readme/mmphonebalsamiq.PNG">
 
+#### Modifications On Original Design
+- From the original design the things displayed in the game header section were changed. 
+    - The score was changed to a matches display
+    - There was also a decision to add difficulty buttons to the game for an easy and hard version.
+    - There was also a counter added to keep track of how long the game had been played before winning. 
+- The colour theme was also changed from the original design to a light blue and a medium green.
+
 ### Design Choices	
-- The game is meant to feel neat and mature so as to not feel infantile.
+- The game is meant to feel neat and mature as to not feel infantile.
 
 #### Fonts	
 - The goal was an overall cohesive feeling so I decided not to use multiple fonts, choosing the font 'Roboto'.	
@@ -61,7 +68,7 @@ memory skills.
     so they would look familiar to most who have used computers before. 
 
 #### Colours	
-- The colour theme included two main colours that complimented one another. Two complimentary blue colours 
+- The colour theme included two main colours that complimented one another. Two complimentary blue/green colours 
     where used so that there was a link to one another but also enough contrast so that everything didn't blend together.
 
 **Colors Used**
@@ -87,6 +94,7 @@ memory skills.
 #### Difficulty Buttons
 - An easy and a hard button for users to press to play each difficulty setting. The difficulty the user
     is currently playing is highlighted.
+- Easy setting has 8 cards and Hard setting has 16 cards
 
 #### Reset Button
 - The reset button resets the cards on the playing board and sets the matches display, moves display, and 
@@ -115,24 +123,24 @@ memory skills.
 
 <img src="assets/images/readme/card.PNG">
 
-- Once two matching cards are found the disapear.
+- Once two matching cards are found they disapear.
 
 ### Features Left to Implement	
 - An extemely hard version of the game	
-- high stats which everyone can compare their stats with others.
+- High stats which everyone can compare their stats with one another.
 
 ## Technologies Used	
 ### Languages	
 - HTML5	
-  - The base of the code for the overall structure of the site.	
+    - The base of the code for the overall structure of the site.	
 - CSS3	
-  - For the styling of the site	
+    - For the styling of the site	
 - Javascript
-    - For game logic.
+    - For the game logic.
 
 ### Libraries, Frameworks & Tools	
 - [Font Awesome](https://fontawesome.com/)	
-  - The icons were used for the images for the cards	
+  - The icons were used for the images on the cards	
 - [Bootstrap](https://getbootstrap.com/)	
   - Was used for added styling and responsiveness of the project	
 - [Google Fonts](https://fonts.google.com/)	
@@ -148,15 +156,24 @@ memory skills.
 - [W3C HTML Validator](https://validator.w3.org/)	
   - Used as a HTML validator	
 - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)	
-  - Used as a CSS validator	
-
+  - Used as a CSS validator
+- [JSHint](https://jshint.com/)	
+  - Used as a javascript validator
 ## Testing	
 - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) 
     - Used to validate CSS code.
+
+<img src="assets/images/readme/mmcssvalidator.PNG">
+
 - [W3C HTML Validator](https://validator.w3.org/)	
     - Used to validate HTML code.
+
+<img src="assets/images/readme/mmhtmlvalidator.PNG">
+
 - [JSHint](https://jshint.com/)	
     - Used to validate Javascript code. 
+
+<img src="assets/images/readme/mmjshint.PNG">
 
 ### User Story Testing
 
@@ -189,13 +206,13 @@ memory skills.
 - Press Hard button and then press reset button and make sure game stays on easy
 
 #### WinModal testing
-- Find all matches and then press x on win modal and make sure it closes and the counters don't change.
+- Find all matches and then press x on win modal and make sure the modal closes and the counters don't change.
 - Find all matches and then press the play again button and make sure the modal closes and all the 
     counters return to zero. 
 
 ## Bugs	
 
-### Bug Cards Not Shuffling after reset	
+### Cards Not Shuffling After Reset	
 #### Bug	
 - The cards weren't randomising after the reset button was pushed	
 #### Fix	
@@ -218,7 +235,7 @@ memory skills.
 - If you start playing and then click on a difficulty button it reshuffles the cards and changes the 
     difficulty setting but doesn't reset the counters to zero. 
 #### Fix
-- Changed the function called at the end of the difficulty function to resetGame() instead of shuffleCards().
+- After calling shuffleCards() changed all the counters to 0.
 
 ## Deployment	
 
