@@ -37,6 +37,13 @@ document.addEventListener("DOMContentLoaded", () => {
   let cardDeck = [];
 
   // difficulty setting
+  /* difficulty setting 
+    add click listenteners to easy and hard button
+    remove selected from button and add to button clicked
+    if easy button clicked then change amount of cards to 8 
+    else change amount of cards to 16
+    set all counters to zero
+  */  
   for (let i = 0; i < modeButtons.length; i++) {
     modeButtons[i].addEventListener("click", function () {
       modeButtons[0].classList.remove("selected");
@@ -84,7 +91,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* check for matches 
-    if cards match, changes card to blank space and pushes the card to cardsWon array.
+    if cards match, changes card to blank space, pushes the card to cardsWon array,
+    removes click listener from matched cards.
     calls congratulations function if found all matches. 
   */
   function checkForMatch() {
@@ -146,6 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* reset game
+  adds click listener to both reset buttons
   clear board, create board, empty all arrays, & change all displays to 0
 */
   for (var i = 0; i < resetBtn.length; i++) {
