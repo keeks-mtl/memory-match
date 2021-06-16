@@ -1,6 +1,5 @@
 // waiting for the content to be loaded
 document.addEventListener("DOMContentLoaded", () => {
-  alert("connected");
 
   const cardArray = [
     "col-2 fas fa-arrows-alt",
